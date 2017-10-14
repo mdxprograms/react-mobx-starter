@@ -1,22 +1,21 @@
 import React from 'react';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
-/*
- * Props are passed to this stateless function that again gets
- * wrapped in an observer
- */
+const Todo = ({ stores, todo }) => {
+  const { delTodo, toggleCompleted } = stores.todoStore;
 
-const Todo = ({ delTodo, todo, toggleCompleted }) => (
-  <div className="todo">
-    <input
-      type="checkbox"
-      name="completed"
-      onClick={() => toggleCompleted(todo)}
-    />
-    <span>{todo.title}</span>
-    <button onClick={() => delTodo(todo)}>&times;</button>
-    <hr />
-  </div>
-);
+  return (
+    <div className="todo">
+      <input
+        type="checkbox"
+        name="completed"
+        onClick={() => toggleCompleted(todo)}
+      />
+      <span>{todo.title}</span>
+      <button onClick={() => delTodo(todo)}>&times;</button>
+      <hr />
+    </div>
+  );
+};
 
-export default observer(Todo);
+export default inject('stores')(observer(Todo));

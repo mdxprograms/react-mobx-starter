@@ -21,9 +21,7 @@ const Todos = ({ stores }) => {
       {todos.currentTodos.map(t =>
         <Todo
           key={Math.random(t.title.length * 1000)}
-          delTodo={todos.delTodo}
           todo={t}
-          toggleCompleted={todos.toggleCompleted}
         />
       )}
     </div>
