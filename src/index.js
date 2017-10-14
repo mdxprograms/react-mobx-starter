@@ -1,11 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
-import todos from './stores/TodoStore';
+import { Provider } from 'mobx-react';
+import Todos from './components/Todos';
+import todoStore from './stores/TodoStore';
 
-// add main stores and pass them to the parent component or "container"
 const stores = {
-  todos
+  todoStore
 };
 
-render(<App stores={stores} />, document.getElementById('root'));
+const App = () => (
+  <Provider stores={stores}>
+    <Todos />
+  </Provider>
+)
+
+render(<App />, document.getElementById('root'));
