@@ -19,7 +19,9 @@ export const TodoActions = todos => ({
   }),
 
   toggleCompleted: action(todo => {
-    todos.collection.find(t => t.title === todo.title).completed = !todo.completed
+    todos.collection.find(
+      t => t.title === todo.title
+    ).completed = !todo.completed;
   }),
 
   updateCurrent: action(currentTodo => {

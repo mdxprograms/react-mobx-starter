@@ -1,0 +1,5 @@
+{
+  "path": "./src/stores",
+  "templatesDirPath": "./lib/generator/templates",
+  "templateName": "store"
+}

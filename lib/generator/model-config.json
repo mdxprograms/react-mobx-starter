@@ -1,0 +1,5 @@
+{
+  "path": "./src/models",
+  "templatesDirPath": "./lib/generator/templates",
+  "templateName": "model"
+}

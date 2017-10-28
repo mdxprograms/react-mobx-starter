@@ -1,0 +1,5 @@
+{
+  "path": "./src/components",
+  "templatesDirPath": "./lib/generator/templates",
+  "templateName": "component"
+}
